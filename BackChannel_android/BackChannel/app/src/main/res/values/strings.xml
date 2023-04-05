@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">BackChannel</string>
+    <string name="title_activity_mainctivity">Mainctivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">Start</string>
+    <string name="slide_1_title">Welcome to BackChannel</string>
+    <string name="slide_1_desc">Prompted content, at your discretion</string>
+    <string name="slide_2_title">Discreetly Social</string>
+    <string name="slide_2_desc">Build meaningful relationships.</string>
+    <string name="slide_2_desc_1">Pair with up to five \n important people in your life.</string>
+    <string name="slide_2_desc_2">Exchange back-to-back updates of each others lock screen photo and optionally include a message.</string>
+    <string name="slide_3_title">Channels</string>
+    <string name="slide_3_desc">Subscribe to channels and discover awesome content behind impressive lock screen photos.</string>
+    <string name="home_title"></string>
+    <string name="home_desc"></string>
+    <string name="title_activity_main_nav_drawer">mainNavDrawer</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+</resources>

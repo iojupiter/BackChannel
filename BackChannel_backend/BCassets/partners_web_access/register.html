@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>BackChannel</title>
+  <style type='text/css'>
+  
+/* Smartphones */
+@media only screen and (max-device-width: 480px) {
+  body{position:absolute;left:-1%;top:-1%;width:100.5%;background-color: ghostwhite;}
+  #wrap {margin:auto;padding: 0px;width: 100%;font-family:arial;}
+
+  .marketing-header { padding: 10px 0px 0px;height: auto;}
+  .fixed-width {margin: 0px auto;width: 960px;text-align:center;height:100%;}
+  #logo{position:relative;height:1%;}
+  #text-animate{position:relative;min-width:100%;color:black;}
+  h1{color: black; font-size:100px;font-family:arial}
+  h2{color: black; font-size:40px;font-family:serif; letter-spacing: 2px;}
+  h3{color: black;font-family:arial;letter-spacing: 2px;font-size:150px;margin: 0px;}
+  h4{color: black;font-family:arial;letter-spacing: 2px;font-size:35px;}
+  h5{color: black;font-family:arial;letter-spacing: 2px;font-size: 17px;}
+  h6{color: black;font-family:arial;letter-spacing: 2px;font-size: 60px;margin-top: -10px;}
+
+  #h3{color:black;text-align:center;position:relative;}
+  #homeSection{position: relative;height: auto;width: 100%;display: inline-block;text-align:center;background-color: ghostwhite;}
+  ul.home-list {list-style-type: none;margin: 0;padding: 0;}
+  ul.home-list>li{display: inline-block;text-align: center;width:100%;}
+  #inner-text{position: relative;width:100%;}
+
+  input{width:90%;height:75px;font-size: 75px;}
+  label{font-size: 75px;}
+  #t-a{resize:none; font-size: 50px;width:90%;}
+  #error-alert{text-align: center;color: red;font-size: 50px;width: 90%;}
+  #submit-button {
+    background-color: black; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 100px;
+  }
+}
+
+@media only screen  and (min-device-width : 1024px) {
+  body{position:absolute;left:-1%;top:-1%;width:100.5%;background-color: ghostwhite;}
+  #wrap {margin:auto;padding: 0px;width: 100%;font-family:arial;}
+
+  .marketing-header { padding: 10px 0px 0px;height: auto;}
+  .fixed-width {margin: 0px auto;width: 960px;text-align:center;height:100%;}
+  #logo{position:relative;width: 10%;}
+  #text-animate{position:relative;min-width:100%;color:black;}
+  h1{color: black; font-size:45px;font-family:arial}
+  h2{color: black; font-size:20px;font-family:arial; letter-spacing: 2px;}
+  h3{color: black;font-family:arial;letter-spacing: 2px; margin: 0px;font-size: 25px;}
+  h4{color: black;;font-family:arial;letter-spacing: 2px;font-size:19px;}
+  h5{color: black;font-family:arial;letter-spacing: 2px;font-size: 17px;}
+  h6{color: black;font-family:arial;letter-spacing: 2px;font-size: 14px;margin-top: -10px;}
+
+  #h3{color:black;text-align:center;position:relative;}
+  #homeSection{position: relative;height: auto;width: 100%;display: inline-block;text-align:center;background-color: ghostwhite;}
+  ul.home-list {list-style-type: none;margin: 0;padding: 0;}
+  ul.home-list>li{display: inline-block;width: 49%;text-align: center;}
+  #inner-text{position: relative;}
+
+  input{width:33%;}
+  #t-a{resize:none}
+  #error-alert{text-align: center;color: red;}
+  #submit-button {background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;}
+}
+</style>
+</head>
+<body>
+<div id="wrap">
+<header class="marketing-header">
+	<div class="fixed-width">
+		<h1>BackChannel</h1>
+    <img id="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAArEAAAKxAFmbYLUAAAU+UlEQVR42u3de4yld13H8c9zzsxeKWvtZSmRipU/jIbE2DVIjMFG4y0EKgKlSlIuRoJEUbBIQY0xXkCsXBI1JCBXUVuVi1X/wJioKAolEijGGzatkXZp17bb3Znd2XPO4x+n08vu7O7szHPm95zze72ayU7Pzp79njOz83s/l/NMAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGzGbbfd9ry2bV/Wtu0NN91003NKzwPsnKXSAzBzP5bkg0kGpQehf44dO/bo+3fffXfpcZhfh5M8N8ntpQdh8ywKi+1Hk3wgPs+cxcmTJx99fzQalR6H+XUwyW1JDpUehM2zMCyu9cV/WHoQoArrEXB16UHYHAGwmK7PdPF3iAfYSQeT/EVEwFwQAIvn+iQfisUfKGM9AhwO6DkBsFiuz/SEP7v9gZIOJvnz2BPQawJgcbwk08Xflj/QB0+JwwG9JgAWw0titz/QPweT/GVEQC8JgPln8Qf67PLYE9BLAmC+XRe7/YH+8+qAHhIA8+u6TLf8l0sPArAJIqBnBMB8ui7Jh2PxB+aLCOgRATB/XhzH/IH55YqBPSEA5suLY8sfmH9eItgDAmB+WPyBReIlgoUJgPnwolj8gcXjJYIFCYD+e1GSP4jFH1hMTgwsRAD02wtjyx9YfCKgAAHQXy/MdMt/V+lBAHbA+jkBzyo9SC0EQD/9SJKPxOIP1OXyTF8i6EcJ7wAB0D/ri7/d/kCNLo3rBOwIAdAvtvwBvERwRwiA/rD4Azxm/SWCDgfMiADohxfE4g9wuvXLBouAGRAA5Vn8Ac7Ozw6YEQFQ1g9nuvjvLj0IQI+5TsAMCIByfjjJH8biD7AZIqBjAqAMiz/AhRMBHRIAO+/a2O0PsFXrEeDEwG0SADvr2iR/lGRP6UEA5pgTAzsgAHbOtZku/rb8AbbP4YBtEgA74/lxzB+gayJgGwTA7D0/dvsDzIrLBm+RAJit58XiDzBrLhu8BQJgdp6X5I9j8QfYCU4MvEACYDZs+QPsPOcEXAAB0L31Lf+9pQcBqNB6BHx76UH6TgB071diyx+gpINJ3l96iL4TAN0blx4AgDyp9AB9JwC615YeAAAbY+cjAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQgIAACokAACgQkulB2BnvfTSS/Psiy7KuG1Lj8Ijhkn+enU1Hz18uPQoO27vxcv5zjc/Lc3uSdI2pceZS80wuftvj+bfbjlSehTmjACozPPvvz8vvP/+0mNwmsFll+WjpYcoYNeBQS55/T1ZzWos/1u3b3+SW0pPwbwRAJVZbZqk8a22VyaTnKj0c9JOkqwuZ2nviTSOSG5Zu9ommZQegzkjAOiXXbuSq66a/rp+mKJpNn7/bL93rtvWF9rT72Oj2872dz7e2f7OJBmNkjvvTFZXSz+rAGcQAPTHc56T3Hxz8k3flAyH09tOX7R3ckt5o7/79EX+XCaT5I47kle9Kvn853du7soNs5RhlkuP0am1iEi6JwDoh4svTt7znunW/yI5dCh597uTa65JVlZKT7Pwfig/le/JK7I7+5IsyomuTR7Okfxpfj2357bSw7BABAD9cOWVydOfXnqK2Th0KPmWb0k++9nSkyy0a3JDXpG3lx5jJp6Sb8xr86HcmEO5N18uPQ4Lwlk39MO5jrMvgv37S0+w8K7Jy0qPMFN7c1Gelm8uPQYLRADATljkuOmJUdZKjzBzJ3K89AgsEAFAP3h5Itv0N3lf6RFmzsmAdEkA0A9HjyanTpWeYnb27i09wcL7x9yaf83flR5jphqXS6JDAoB+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" alt="logo"/>
+    <hr width="50%">
+	</div>
+</header>
+    <div id="homeSection">
+      <h3>Sign up</h3>
+    	<ul class="home-list">
+    		<li>
+    			<div id="inner-text">
+            <form id="registration_form" method="" action="">
+              <br>
+              <label>Channel name:</label><br>
+              <input type="text" id="channel_name" name="channel_name" required><br>
+              <br><br>
+              <label>Email:</label><br>
+              <input type="email" name="email" required><br>
+              <br><br>
+              <label>Password:</label><br>
+              <input type="password" name="password" required><br>
+              <br><br>
+              <label>Channel Icon:</label><br>
+              <input type="file" name="channel_logo" accept="image/*" required><br>
+              <br><br><br>
+              <textarea id="t-a" name="channel_desc" rows="5" cols="50" placeholder="Brief description of channel" required></textarea>
+              <br>
+              <p id="error-alert"></p>
+              <br>
+              <button id="submit-button" type="button">Sign up</button>
+            </form>
+    			</div><hr width="50%"><br>
+          <h6>Already have a channel?  <span><a href="/login">Log in</a></span></h6>
+    		</li>
+    	</ul>
+	</div>		
+</div>
+<!--end wrapper-->
+<script type="text/javascript">
+  function register(){
+
+  var channel_name = document.getElementById("channel_name").value;
+
+  var form = document.getElementById('registration_form');
+  var formData = new FormData(form);
+
+
+  var xhr = new XMLHttpRequest();
+  // Add any event handlers here...
+  var url = "http://192.168.8.101:9000/partners/registration";
+  xhr.open('POST', url, true);
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        if(xhr.responseText == "0"){
+          document.getElementById("error-alert").innerHTML="Channel name already taken";
+        }else{
+          sessionStorage.setItem("username", channel_name);
+          var response = JSON.parse(xhr.responseText);
+          sessionStorage.setItem("token", response["token"]);
+          sessionStorage.setItem("logo", response["logo"]);
+          post(response["url"] + channel_name, "", "POST");
+        }
+      }
+  };
+
+  xhr.send(formData);  
+}
+
+function post(path, params, method) {
+    method = method || "post"; 
+
+    var form = document.createElement("form");
+    form.setAttribute("method", method);
+    form.setAttribute("action", path);
+
+    for(var key in params) {
+        if(params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+
+            form.appendChild(hiddenField);
+        }
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+}
+
+  
+var sb = document.getElementById("submit-button");
+var form = document.getElementById('registration_form');
+sb.addEventListener('click', function () {
+  if (form.checkValidity()) {
+    register();
+  }
+  else {
+    alert("Please fill all the fields");
+  }
+}, false);
+
+</script>
+</body>
+</html>
